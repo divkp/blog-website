@@ -8,9 +8,20 @@ import dotenv from "dotenv";
 const app = express();
 
 // Configure CORS
-app.use(cors(
-  {origin:["https://blog-website-ette.vercel.app"]
-  }));
+const allowedOrigins = ['https://blog-website-ette.vercel.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+// Use the CORS middleware
+app.use(cors(corsOptions));
 dotenv.config();
 
 app.use(bodyParser.json({ extended: true }));
