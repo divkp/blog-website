@@ -8,7 +8,9 @@ import dotenv from "dotenv";
 const app = express();
 
 // Configure CORS
-app.use(cors());
+app.use(cors(
+  {origin:["https://blog-website-ette.vercel.app"]
+  }));
 dotenv.config();
 
 app.use(bodyParser.json({ extended: true }));
