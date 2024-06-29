@@ -11,7 +11,13 @@ const app = express();
 
 
 // Use the CORS middleware
-app.use(cors());
+app.use(cors(
+  {
+  origin: [""],
+  method: ["GET","POST","PUT","DELETE"],
+  credentials: true
+}
+));
 dotenv.config();
 
 app.use(bodyParser.json({ extended: true }));
