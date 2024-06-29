@@ -19,7 +19,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", router);
 
 connection();
+app.get("/",(req,res)=>{
 
+}
 app.listen(8000, () => {
   console.log("Server running successfully");
 });
