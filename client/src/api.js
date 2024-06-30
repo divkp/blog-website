@@ -3,7 +3,7 @@ import axios from "axios";
 import { API_NOTIFICATIONS } from "./noti";
 import { API_CALLS } from "./noti";
 import { getAccesstoken ,getType} from "./common-utils";
-const API_URL = "https://blog-website-ette.vercel.app";
+const API_URL = "http://blog-website-ette.vercel.app";
 
 const axiosInstance = axios.create({
   baseURL: API_URL,
