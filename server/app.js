@@ -13,7 +13,7 @@ const app = express();
 // Use the CORS middleware
 app.use(cors(
   {
-  origin: ["https://blog-website-e6ng.vercel.app"],
+  origin: ["http://blog-website-e6ng.vercel.app"],
   method: ["GET","POST","PUT","DELETE"],
   credentials: true
 }
